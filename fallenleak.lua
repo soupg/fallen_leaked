@@ -1,6 +1,16 @@
+--[[
+██╗     ██╗██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
+██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+██║     ██║██████╔╝██████╔╝███████║██████╔╝ ╚████╔╝ 
+██║     ██║██╔══██╗██╔══██╗██╔══██║██╔══██╗  ╚██╔╝  
+███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║   ██║   
+╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+]]
+
+
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/ui-libraries/main/drawing/void/source.lua"))()
 
-local watermark = library:Watermark("Fallen v3 UI")
+local watermark = library:Watermark("Fallen v3 UI | Made by supg")
 -- watermark:Set("Watermark Set")
 -- watermark:Hide() -- toggles watermark
 
@@ -114,7 +124,6 @@ end
 function Damage(Player, Amount)
     if Player == "LocalPlayer" then Player = game.Players.LocalPlayer.Name end
 
-
     Remotes.DamagePlayer:FireServer(game.Players[Player].Character.Humanoid, Amount, 1099752, Encrypt())
 end
 
@@ -154,16 +163,6 @@ function SpawnWeapon(ItemId, Amount, somestuff, player)
     if drop_999 then Amount = 99 end
 
     Remotes.DropItem:FireServer(ItemId, Amount, somestuff, durabiltity, "0/500", game.Players[player].Character.HumanoidRootPart.CFrame, 1099752, Encrypt())
-end
-
-function DeletePlayerItems(PlayerName)
-    for i,v in pairs(game:GetService("Players")[PlayerName].Tools:GetChildren()) do
-        SpawnWeapon(17,0,v)
-    end
-end
-
-function DeletePart(instance)
-    SpawnWeapon(17,0,instance)
 end
 
 --[[
