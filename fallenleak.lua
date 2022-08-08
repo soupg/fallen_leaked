@@ -134,10 +134,6 @@ function Heal(plr)
     Damage(game.Players[plr].Name, -100)
 end
 
-function DamagaObj(object)
-    Remotes.DamageObj:FireServer(object, 100, 1099752, Encrypt());
-end
-
 function Remove(instance)
     Remotes.DestroyItem:InvokeServer(instance, 1099752, Encrypt(), 2)
 end
